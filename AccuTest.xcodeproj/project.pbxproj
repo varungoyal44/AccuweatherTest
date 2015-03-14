@@ -64,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				A5562C8B1AB3E87A00DE6B40 /* AccuTest */,
+				A5562C8C1AB3E87A00DE6B40 /* Supporting Files */,
 				A5562CA51AB3E87B00DE6B40 /* AccuTestTests */,
 				A5562C8A1AB3E87A00DE6B40 /* Products */,
 			);
@@ -81,14 +82,11 @@
 		A5562C8B1AB3E87A00DE6B40 /* AccuTest */ = {
 			isa = PBXGroup;
 			children = (
+				A5562C961AB3E87A00DE6B40 /* Main.storyboard */,
 				A5562C901AB3E87A00DE6B40 /* AppDelegate.h */,
 				A5562C911AB3E87A00DE6B40 /* AppDelegate.m */,
 				A5562C931AB3E87A00DE6B40 /* ViewController.h */,
 				A5562C941AB3E87A00DE6B40 /* ViewController.m */,
-				A5562C961AB3E87A00DE6B40 /* Main.storyboard */,
-				A5562C991AB3E87A00DE6B40 /* Images.xcassets */,
-				A5562C9B1AB3E87B00DE6B40 /* LaunchScreen.xib */,
-				A5562C8C1AB3E87A00DE6B40 /* Supporting Files */,
 			);
 			path = AccuTest;
 			sourceTree = "<group>";
@@ -96,10 +94,13 @@
 		A5562C8C1AB3E87A00DE6B40 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A5562C9B1AB3E87B00DE6B40 /* LaunchScreen.xib */,
+				A5562C991AB3E87A00DE6B40 /* Images.xcassets */,
 				A5562C8D1AB3E87A00DE6B40 /* Info.plist */,
 				A5562C8E1AB3E87A00DE6B40 /* main.m */,
 			);
 			name = "Supporting Files";
+			path = AccuTest;
 			sourceTree = "<group>";
 		};
 		A5562CA51AB3E87B00DE6B40 /* AccuTestTests */ = {
