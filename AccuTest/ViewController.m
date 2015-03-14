@@ -9,6 +9,12 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lbCity;
+@property (weak, nonatomic) IBOutlet UILabel *lbTemperature;
+@property (weak, nonatomic) IBOutlet UILabel *lbMinMax;
+@property (weak, nonatomic) IBOutlet UILabel *lbCondition;
+@property (weak, nonatomic) IBOutlet UIImageView *imgCondition;
+
 
 @end
 
@@ -16,12 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
