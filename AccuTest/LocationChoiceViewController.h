@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationMapper.h"
+@protocol LocationChoiceProtocol;
 
 @interface LocationChoiceViewController : UIViewController
 @property (nonatomic, weak) NSArray *addresses;
+@property (nonatomic, weak) id<LocationChoiceProtocol> delegate;
+@end
+
+
+@protocol LocationChoiceProtocol <NSObject>
+-(void) didSelectLocation:(LocationMapper *) location;
 @end

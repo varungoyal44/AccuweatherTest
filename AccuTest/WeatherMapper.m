@@ -33,6 +33,11 @@
         _windGust = [[[responseJSON objectForKey:@"wind"] objectForKey:@"gust"] stringValue];
         
         _windDirection = [[[responseJSON objectForKey:@"wind"] objectForKey:@"deg"] stringValue];
+        
+        if(_city.length == 0)
+        {
+            _city = [[responseJSON objectForKey:@"sys"] objectForKey:@"country"];
+        }
     }
     return self;
 }

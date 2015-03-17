@@ -16,7 +16,7 @@
 
 
 
-@interface MainViewController () <UIScrollViewDelegate>
+@interface MainViewController () <UIScrollViewDelegate, LocationChoiceProtocol>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *lbCity;
 @property (weak, nonatomic) IBOutlet UILabel *lbTemperature;
@@ -68,7 +68,10 @@
     
     // To set default values...
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
-    [self updateWeatherInfoForLocation:nil];
+    LocationMapper *defaultLocation = [[LocationMapper alloc] init];
+    [defaultLocation setCity:@"State College"];
+    [defaultLocation setState:@"PA"];
+    [self updateWeatherInfoForLocation:defaultLocation];
 }
 
 
@@ -125,7 +128,7 @@
             else
             {
                 // If more than one location, give the user an option to choose...
-                [SVProgressHUD setStatus:@"found multiple locations"];
+                [SVProgressHUD showInfoWithStatus:@"found multiple locations"];
                 [self performSegueWithIdentifier:@"locationChoiceSegue" sender:self];
             }
         }
@@ -151,7 +154,13 @@
     {
         LocationChoiceViewController *locationChoiceVC = (LocationChoiceViewController *)[segue destinationViewController];
         locationChoiceVC.addresses = self.addressFound;
+        locationChoiceVC.delegate = self;
     }
+}
+
+-(void) didSelectLocation:(LocationMapper *) location
+{
+    [self updateWeatherInfoForLocation:location];
 }
 
 #pragma mark- keyboard
@@ -205,21 +214,86 @@
         return;
     }
     
+    [SVProgressHUD show];
     [SVProgressHUD setStatus:@"getting weather data"];
+    
+    // To get weather data from Open weather map API...
     OpenWeatherMapAPI *openWeatherMapAPI = [[OpenWeatherMapAPI alloc] initWithLocation:newLocation];
     [openWeatherMapAPI getCurrentWeatherWithCompletionHandler:^(WeatherMapper *currentWeather, NSString *errorMessage)
      {
          if(currentWeather)
          {
+             // To get weather icon if exists...
+             if(currentWeather.iconID.length > 0)
+             {
+                 [openWeatherMapAPI getImageWithIconID:currentWeather.iconID
+                                 withCompletionHandler:^(id weatherIcon, NSString *errorMessage) {
+                                     if(weatherIcon && [[weatherIcon class] isSubclassOfClass:[UIImage class]])
+                                     {
+                                         [self.imgWeatherIcon setImage:weatherIcon];
+                                     }
+                                     else
+                                     {
+                                         [SVProgressHUD showErrorWithStatus:errorMessage];
+                                     }
+                                 }];
+             }
+             
+             // To display city...
              self.lbCity.text = currentWeather.city;
+             
+             // To display temperatures...
              self.lbTemperature.text = [NSString stringWithFormat:@"%@°", currentWeather.temperature];
              self.lbMinMax.text = [NSString stringWithFormat:@"%@°/%@°", currentWeather.minimumTemperature, currentWeather.maximumTemperature];
+             
+             // To display current condition...
              self.lbCondition.text = currentWeather.condition;
-             self.lbHumidityValue.text = currentWeather.humidity;
-             self.lbWindSpeedValue.text = currentWeather.windSpeed;
-             self.lbWindGustValue.text = currentWeather.windGust;
-             self.lbWindDirectionValue.text = currentWeather.windDirection;
+             
+             // To display humidity...
+             if(currentWeather.humidity.length > 0)
+             {
+                 self.lbHumidityValue.text = [NSString stringWithFormat:@"%@%%", currentWeather.humidity];
+             }
+             else
+             {
+                 self.lbHumidityValue.text = @"-";
+             }
+             
+             // To display wind speed...
+             if(currentWeather.windSpeed.length > 0)
+             {
+                 self.lbWindSpeedValue.text = [NSString stringWithFormat:@"%@ mps",currentWeather.windSpeed];
+             }
+             else
+             {
+                 self.lbWindSpeedValue.text = @"-";
+             }
+             
+             // To display wind gust...
+             if(currentWeather.windGust.length > 0)
+             {
+                 self.lbWindGustValue.text = [NSString stringWithFormat:@"%@ mps", currentWeather.windGust];
+             }
+             else
+             {
+                 self.lbWindGustValue.text = @"-";
+             }
+             
+             // To display wind direction...
+             if(currentWeather.windDirection.length > 0)
+             {
+                 self.lbWindDirectionValue.text = [NSString stringWithFormat:@"%@°",currentWeather.windDirection];
+             }
+             else
+             {
+                 self.lbWindDirectionValue.text = @"-";
+             }
+             
+             // To stop SVProgressHUD...
              [SVProgressHUD showSuccessWithStatus:@"done"];
+             
+             // To clear the text field...
+             [self.tfLocationName setText:@""];
          }
          else
          {

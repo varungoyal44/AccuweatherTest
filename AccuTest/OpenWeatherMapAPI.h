@@ -11,10 +11,10 @@
 #import "WeatherMapper.h"
 
 typedef void (^CurrentWeatherCompletionHandler)(WeatherMapper* currentWeather, NSString *errorMessage);
-
+typedef void (^WeatherIconCompletionHandler)(id weatherIcon, NSString *errorMessage);
 
 @interface OpenWeatherMapAPI : NSObject
 -(id) initWithLocation:(LocationMapper *) location;
 -(void) getCurrentWeatherWithCompletionHandler:(CurrentWeatherCompletionHandler) completionHandler;
-
+-(void) getImageWithIconID:(NSString *) iconID withCompletionHandler:(WeatherIconCompletionHandler) completionHandler;
 @end

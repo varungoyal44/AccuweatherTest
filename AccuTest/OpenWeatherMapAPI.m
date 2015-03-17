@@ -29,14 +29,16 @@
 
 -(void) getCurrentWeatherWithCompletionHandler:(CurrentWeatherCompletionHandler) completionHandler
 {
-    // To create string...
+    // To create url...
     NSString *urlString = [NSString stringWithFormat:@"%@weather?q=%@&APPID=%@", self.baseURL, [self.location getAddressStringForURL], API_KEY];
     NSURL *url = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
+
+    // To create request...
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     requestOperation.responseSerializer = [AFJSONResponseSerializer serializer];
     
+    // To set block operation...
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         if([[responseObject objectForKey:@"cod"] integerValue] != 200)
@@ -54,10 +56,32 @@
         completionHandler(nil, [error localizedDescription]);
     }];
     
-    
+    // To start the operation...
     [requestOperation start];
     
 }
 
+-(void) getImageWithIconID:(NSString *) iconID withCompletionHandler:(WeatherIconCompletionHandler) completionHandler
+{
+    // To create the url...
+    NSString *imageURLString = [NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", iconID];
+    NSURL *url = [NSURL URLWithString:imageURLString];
+    
+    // To create request...
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    // To set block operation...
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completionHandler(responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Image error: %@", [error description]);
+        completionHandler(nil, [error localizedDescription]);
+    }];
+    
+    // To start the operation...
+    [requestOperation start];
+}
 
 @end

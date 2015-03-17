@@ -10,12 +10,14 @@
 #import "LocationMapper.h"
 
 @interface LocationChoiceViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation LocationChoiceViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -28,7 +30,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellIdentifier"];
     LocationMapper *location = self.addresses[indexPath.row];
     [cell.textLabel setText:[location getAddressStringWithDelimiter:@", "]];
+    [cell setBackgroundColor:[UIColor clearColor]];
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self.delegate didSelectLocation:self.addresses[indexPath.row]];
+    }];
 }
 
 - (IBAction)buttonCancelPressed:(id)sender
