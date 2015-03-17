@@ -259,6 +259,7 @@
 				TargetAttributes = {
 					A5562C881AB3E87A00DE6B40 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = W6AWHC89XZ;
 					};
 					A5562CA11AB3E87B00DE6B40 = {
 						CreatedOnToolsVersion = 6.2;
@@ -488,6 +489,7 @@
 			baseConfigurationReference = FD57B4BC2927F0D46116C050 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Varun Goyal (46QYLHR5KH)";
 				INFOPLIST_FILE = AccuTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,6 +502,7 @@
 			baseConfigurationReference = DF6ED813B2A4B36DA9BAA16C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Varun Goyal (46QYLHR5KH)";
 				INFOPLIST_FILE = AccuTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
