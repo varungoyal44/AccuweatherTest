@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		A5562C8F1AB3E87A00DE6B40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562C8E1AB3E87A00DE6B40 /* main.m */; };
 		A5562C921AB3E87A00DE6B40 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562C911AB3E87A00DE6B40 /* AppDelegate.m */; };
-		A5562C951AB3E87A00DE6B40 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562C941AB3E87A00DE6B40 /* ViewController.m */; };
+		A5562C951AB3E87A00DE6B40 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562C941AB3E87A00DE6B40 /* MainViewController.m */; };
 		A5562C981AB3E87A00DE6B40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5562C961AB3E87A00DE6B40 /* Main.storyboard */; };
 		A5562C9A1AB3E87A00DE6B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5562C991AB3E87A00DE6B40 /* Images.xcassets */; };
 		A5562C9D1AB3E87B00DE6B40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5562C9B1AB3E87B00DE6B40 /* LaunchScreen.xib */; };
 		A5562CA91AB3E87B00DE6B40 /* AccuTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CA81AB3E87B00DE6B40 /* AccuTestTests.m */; };
+		A5562CB61AB6532100DE6B40 /* OpenWeatherMapAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CB51AB6532100DE6B40 /* OpenWeatherMapAPI.m */; };
+		A5562CBA1AB669C700DE6B40 /* LocationChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CB91AB669C700DE6B40 /* LocationChoiceViewController.m */; };
+		A5562CBE1AB66B9800DE6B40 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5562CBD1AB66B9800DE6B40 /* CoreLocation.framework */; };
+		A5562CC11AB7993200DE6B40 /* LocationMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CC01AB7993200DE6B40 /* LocationMapper.m */; };
+		A5562CC41AB7AE9A00DE6B40 /* WeatherMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CC31AB7AE9A00DE6B40 /* WeatherMapper.m */; };
+		A5562CC81AB7D0EB00DE6B40 /* NSString+TemperatureConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = A5562CC71AB7D0EB00DE6B40 /* NSString+TemperatureConversion.m */; };
 		D617F9B4EEE9EF5E6198797A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508B800F057F09D753F8EC76 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -34,14 +40,26 @@
 		A5562C8E1AB3E87A00DE6B40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A5562C901AB3E87A00DE6B40 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5562C911AB3E87A00DE6B40 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A5562C931AB3E87A00DE6B40 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A5562C941AB3E87A00DE6B40 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A5562C931AB3E87A00DE6B40 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A5562C941AB3E87A00DE6B40 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		A5562C971AB3E87A00DE6B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5562C991AB3E87A00DE6B40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A5562C9C1AB3E87B00DE6B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A5562CA21AB3E87B00DE6B40 /* AccuTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccuTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5562CA71AB3E87B00DE6B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5562CA81AB3E87B00DE6B40 /* AccuTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccuTestTests.m; sourceTree = "<group>"; };
+		A5562CB41AB6532100DE6B40 /* OpenWeatherMapAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenWeatherMapAPI.h; sourceTree = "<group>"; };
+		A5562CB51AB6532100DE6B40 /* OpenWeatherMapAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenWeatherMapAPI.m; sourceTree = "<group>"; };
+		A5562CB81AB669C700DE6B40 /* LocationChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationChoiceViewController.h; sourceTree = "<group>"; };
+		A5562CB91AB669C700DE6B40 /* LocationChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationChoiceViewController.m; sourceTree = "<group>"; };
+		A5562CBB1AB66B8C00DE6B40 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A5562CBD1AB66B9800DE6B40 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A5562CBF1AB7993200DE6B40 /* LocationMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationMapper.h; sourceTree = "<group>"; };
+		A5562CC01AB7993200DE6B40 /* LocationMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationMapper.m; sourceTree = "<group>"; };
+		A5562CC21AB7AE9A00DE6B40 /* WeatherMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherMapper.h; sourceTree = "<group>"; };
+		A5562CC31AB7AE9A00DE6B40 /* WeatherMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherMapper.m; sourceTree = "<group>"; };
+		A5562CC61AB7D0EB00DE6B40 /* NSString+TemperatureConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TemperatureConversion.h"; sourceTree = "<group>"; };
+		A5562CC71AB7D0EB00DE6B40 /* NSString+TemperatureConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TemperatureConversion.m"; sourceTree = "<group>"; };
 		DF6ED813B2A4B36DA9BAA16C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FD57B4BC2927F0D46116C050 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5562CBE1AB66B9800DE6B40 /* CoreLocation.framework in Frameworks */,
 				D617F9B4EEE9EF5E6198797A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +87,8 @@
 		02DE4B45DF29AFAB7B44B31F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5562CBD1AB66B9800DE6B40 /* CoreLocation.framework */,
+				A5562CBB1AB66B8C00DE6B40 /* MapKit.framework */,
 				508B800F057F09D753F8EC76 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -100,8 +121,10 @@
 				A5562C961AB3E87A00DE6B40 /* Main.storyboard */,
 				A5562C901AB3E87A00DE6B40 /* AppDelegate.h */,
 				A5562C911AB3E87A00DE6B40 /* AppDelegate.m */,
-				A5562C931AB3E87A00DE6B40 /* ViewController.h */,
-				A5562C941AB3E87A00DE6B40 /* ViewController.m */,
+				A5562CB31AB651CE00DE6B40 /* ViewControllers */,
+				A5562CB21AB651AF00DE6B40 /* APIs */,
+				A5562CB71AB6539D00DE6B40 /* Mappers */,
+				A5562CC91AB7D0F600DE6B40 /* Categories */,
 			);
 			path = AccuTest;
 			sourceTree = "<group>";
@@ -133,6 +156,46 @@
 				A5562CA71AB3E87B00DE6B40 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A5562CB21AB651AF00DE6B40 /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				A5562CB41AB6532100DE6B40 /* OpenWeatherMapAPI.h */,
+				A5562CB51AB6532100DE6B40 /* OpenWeatherMapAPI.m */,
+			);
+			name = APIs;
+			sourceTree = "<group>";
+		};
+		A5562CB31AB651CE00DE6B40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5562C931AB3E87A00DE6B40 /* MainViewController.h */,
+				A5562C941AB3E87A00DE6B40 /* MainViewController.m */,
+				A5562CB81AB669C700DE6B40 /* LocationChoiceViewController.h */,
+				A5562CB91AB669C700DE6B40 /* LocationChoiceViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A5562CB71AB6539D00DE6B40 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				A5562CBF1AB7993200DE6B40 /* LocationMapper.h */,
+				A5562CC01AB7993200DE6B40 /* LocationMapper.m */,
+				A5562CC21AB7AE9A00DE6B40 /* WeatherMapper.h */,
+				A5562CC31AB7AE9A00DE6B40 /* WeatherMapper.m */,
+			);
+			name = Mappers;
+			sourceTree = "<group>";
+		};
+		A5562CC91AB7D0F600DE6B40 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A5562CC61AB7D0EB00DE6B40 /* NSString+TemperatureConversion.h */,
+				A5562CC71AB7D0EB00DE6B40 /* NSString+TemperatureConversion.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		ECEADD6C5B46764B1DC1078F /* Pods */ = {
@@ -295,9 +358,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5562C951AB3E87A00DE6B40 /* ViewController.m in Sources */,
+				A5562CB61AB6532100DE6B40 /* OpenWeatherMapAPI.m in Sources */,
+				A5562CC11AB7993200DE6B40 /* LocationMapper.m in Sources */,
+				A5562C951AB3E87A00DE6B40 /* MainViewController.m in Sources */,
 				A5562C921AB3E87A00DE6B40 /* AppDelegate.m in Sources */,
+				A5562CC81AB7D0EB00DE6B40 /* NSString+TemperatureConversion.m in Sources */,
 				A5562C8F1AB3E87A00DE6B40 /* main.m in Sources */,
+				A5562CC41AB7AE9A00DE6B40 /* WeatherMapper.m in Sources */,
+				A5562CBA1AB669C700DE6B40 /* LocationChoiceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +491,7 @@
 				INFOPLIST_FILE = AccuTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -434,6 +503,7 @@
 				INFOPLIST_FILE = AccuTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
