@@ -77,7 +77,7 @@
 
 
 
-#pragma mark- IBActions
+#pragma mark- Actions
 - (IBAction)buttonGetWeatherPushed:(id)sender
 {
     // To hide the keyboard...
