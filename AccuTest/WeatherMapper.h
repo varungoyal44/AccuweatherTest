@@ -30,6 +30,11 @@
 
 @property (nonatomic, strong) NSString *windDirection; // Wind direction, degrees (meteorological)
 
+
+/**
+ To initialize an object of WeatherMapper.
+ @param responseJSON is the response received from the WeatherAPI in JSON format.
+ */
 - (id) initWithJSON:(NSDictionary *) responseJSON;
 
 @end

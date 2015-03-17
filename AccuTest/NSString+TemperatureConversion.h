@@ -10,7 +10,16 @@
 
 @interface NSString (TemperatureConversion)
 
+/**
+ This method will convert the kelvin value of temperature into absolute integer Fahrenheit value.
+ Note: should only be used on a temperature type object.
+ */
 - (NSString *)convertToAbsoluteFahrenheit;
+
+/**
+ This method will convert the kelvin value of temperature into absolute integer Celcius value.
+ Note: should only be used on a temperature type object.
+ */
 - (NSString *)convertToAbsoluteCelcius;
 
 @end
